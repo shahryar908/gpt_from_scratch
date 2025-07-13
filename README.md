@@ -1,77 +1,149 @@
-GPT from Scratch
-Overview
-This project implements a lightweight, GPT-inspired Transformer model in PyTorch, designed for character-level text generation on the Tiny Shakespeare dataset. It incorporates key concepts from the seminal paper "Attention Is All You Need" (Vaswani et al., 2017), including the Transformer architecture and multi-head attention. The implementation prioritizes clarity, efficiency, and modularity, making it ideal for educational purposes and experimentation. The adoption of the paper's attention mechanisms enhances the model's ability to capture contextual relationships, significantly improving its text generation potential.
-Key Features
 
-Transformer Architecture: Custom-built with encoder and decoder blocks, inspired by "Attention Is All You Need".
-Multi-Head Attention: Implements scaled dot-product attention for robust sequence modeling, as described in the paper.
-Positional Encoding: Embeds positional information to maintain sequence order, per the original Transformer design.
-Training Pipeline: Processes the Tiny Shakespeare dataset with a character-level tokenizer for efficient training.
-Modular Codebase: Organized for easy modification and scalability.
 
-Impact of "Attention Is All You Need"
-The project leverages the multi-head attention mechanism and Transformer architecture from the "Attention Is All You Need" paper. This enables the model to focus on relevant parts of the input sequence dynamically, improving its ability to learn long-range dependencies in text. The result is a more coherent and context-aware model, even with the small-scale Tiny Shakespeare dataset, demonstrating the power of attention-based architectures.
-Directory Structure
+````markdown
+# 🧠 GPT from Scratch
+
+A lightweight, GPT-style Transformer model implemented **from scratch** in **PyTorch** for **character-level text generation** using the Tiny Shakespeare dataset.  
+It re-implements the core concepts from the groundbreaking paper [_“Attention Is All You Need”_](https://arxiv.org/abs/1706.03762).
+
+---
+
+## 📌 Overview
+
+This project implements a **GPT-inspired Transformer** architecture, incorporating:
+
+- **Multi-Head Attention**
+- **Scaled Dot-Product Attention**
+- **Positional Encoding**
+- A modular training pipeline for experimentation
+
+It emphasizes **clarity**, **modularity**, and **educational value** — ideal for learning how Transformers work at a low level.
+
+---
+
+## 🔑 Key Features
+
+- 🧱 **Transformer Architecture**: Built using custom encoder/decoder blocks
+- 🧠 **Multi-Head Attention**: For learning long-range sequence dependencies
+- 🧮 **Positional Encoding**: Preserves sequence order without recurrence
+- 🧪 **Training Pipeline**: Tokenizes and processes Tiny Shakespeare dataset
+- 🧰 **Modular Codebase**: Easily extendable and understandable
+
+---
+
+## 📖 Paper Impact
+
+This project is deeply rooted in the **"Attention Is All You Need"** paper by Vaswani et al.  
+It demonstrates how **self-attention** and **multi-head attention** can be implemented from scratch and used effectively even on **small-scale datasets**, producing **coherent and context-aware outputs**.
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/shahryar908/gpt_from_scratch
+cd gpt_from_scratch
+````
+
+### 2. Install Dependencies
+
+> Requires **Python 3.8+** and **PyTorch**
+
+```bash
+pip install torch
+```
+
+### 3. Download the Dataset
+
+```bash
+python Utils/dataset.py
+```
+
+### 4. Train the Model
+
+```bash
+python training.py
+```
+
+> ⚙️ Default settings: `5 epochs`, `Adam optimizer`, `learning rate = 1e-4`
+
+---
+
+## 🧠 Usage
+
+* 🏋️ **Training**: Trains on 70% of dataset, logs loss every 100 batches
+* ⚙️ **Customization**: Tweak hyperparameters in `model.py` or `training.py`
+* 💻 **Device Support**: Uses GPU (CUDA) if available, else CPU
+* 🧵 **Extending**: Add decoding loop for text generation (currently not included)
+
+---
+
+## 📐 Technical Details
+
+| Component           | Value                              |
+| ------------------- | ---------------------------------- |
+| Transformer Layers  | 4                                  |
+| Attention Heads     | 8                                  |
+| Embedding Dimension | 512                                |
+| Feedforward Dim     | 2048                               |
+| Tokenizer           | Character-level                    |
+| Dataset             | Tiny Shakespeare (\~1MB)           |
+| Loss Function       | Cross-Entropy with Teacher Forcing |
+| Optimizer           | Adam                               |
+
+---
+
+## 📂 Directory Structure
+
+```
 gpt_from_scratch/
 ├── dataset/
 │   └── shakespeare/
-│       └── input.txt          # Tiny Shakespeare dataset
+│       └── input.txt
 ├── src/
-│   ├── decoder.py             # Transformer decoder with cross-attention
-│   ├── encoder.py             # Transformer encoder with self-attention
-│   ├── model.py               # Complete Transformer architecture
-│   ├── multiheadattention.py  # Multi-head attention mechanism
-│   ├── scaledotattention.py   # Scaled dot-product attention
-│   └── training.py            # Training script with loss tracking
+│   ├── encoder.py
+│   ├── decoder.py
+│   ├── model.py
+│   ├── multiheadattention.py
+│   ├── scaledotattention.py
+│   └── training.py
 ├── Utils/
-│   ├── dataloader.py          # DataLoader for batch processing
-│   ├── dataset.py             # Script to fetch Tiny Shakespeare dataset
-│   ├── positional_encoding.py # Positional encoding module
-│   └── tokenizer.py           # Character-level tokenization utilities
-└── README.md                  # Project documentation
+│   ├── dataloader.py
+│   ├── dataset.py
+│   ├── positional_encoding.py
+│   └── tokenizer.py
+└── README.md
+```
 
-Setup Instructions
+---
 
-Clone the Repository:
-git clone <repository-url>
-cd gpt_from_scratch
+## 🚀 Future Enhancements
+
+* 💾 Add checkpoint saving after each epoch
+* 🧠 Implement text generation (sampling/greedy decoding)
+* 📊 Add evaluation metrics (e.g., perplexity)
+* 📈 Support larger datasets like WikiText or OpenWebText
+
+---
+
+## ❓ Why This Project?
+
+This project is built for learners, engineers, and researchers who want to:
+
+* Understand Transformer internals from scratch
+* Work with a clean, minimal PyTorch codebase
+* Run and experiment on low-resource machines (e.g., laptops, Colab)
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
 
 
-Install Dependencies:Requires Python 3.8+ and PyTorch. Install dependencies:
-pip install torch
+---
 
-
-Download Dataset:Fetch the Tiny Shakespeare dataset:
-python Utils/dataset.py
-
-
-Train the Model:Start training with default settings (5 epochs, Adam optimizer, 1e-4 learning rate):
-python training.py
-
-
-
-Usage
-
-Training: Trains on 70% of the Tiny Shakespeare dataset, logging loss every 100 batches and average loss per epoch.
-Customization: Modify hyperparameters (e.g., embed_dim, num_layers, dropout) in model.py or training.py.
-Device Support: Uses CUDA if available; otherwise, defaults to CPU.
-Extending Functionality: Adaptable for text generation by adding a decoding function (not included).
-
-Technical Details
-
-Model Architecture: 4 Transformer layers, 8 attention heads, 512 embedding dimensions, and 2048 feed-forward dimensions.
-Tokenizer: Character-level for simplicity and flexibility.
-Dataset: Tiny Shakespeare (~1MB) for lightweight training.
-Training: Uses teacher-forcing with cross-entropy loss and Adam optimizer.
-
-Future Enhancements
-
-Add model checkpointing to save weights after each epoch.
-Implement text generation for inference.
-Introduce evaluation metrics (e.g., perplexity) for performance analysis.
-Optimize hyperparameters and explore larger datasets.
-
-Why This Project?
-This project excels in its clear implementation of the "Attention Is All You Need" principles, offering a hands-on way to understand Transformers. Its lightweight design runs efficiently on modest hardware, making it accessible for learning and experimentation.
-License
-Licensed under the MIT License.
+```
