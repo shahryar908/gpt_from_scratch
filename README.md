@@ -1,11 +1,11 @@
-# 🧠 GPT from Scratch
+#  GPT from Scratch
 
 A lightweight, GPT-style Transformer model implemented **from scratch** in **PyTorch** for **character-level text generation** using the Tiny Shakespeare dataset.  
 It re-implements the core concepts from the groundbreaking paper [_"Attention Is All You Need"_](https://arxiv.org/abs/1706.03762).
 
 ---
 
-## 📌 Overview
+##  Overview
 
 This project implements a **GPT-inspired Transformer** architecture, incorporating:
 - **Multi-Head Attention**
@@ -17,24 +17,24 @@ It emphasizes **clarity**, **modularity**, and **educational value** — ideal f
 
 ---
 
-## 🔑 Key Features
+##  Key Features
 
-- 🧱 **Transformer Architecture**: Built using custom encoder/decoder blocks
-- 🧠 **Multi-Head Attention**: For learning long-range sequence dependencies
-- 🧮 **Positional Encoding**: Preserves sequence order without recurrence
-- 🧪 **Training Pipeline**: Tokenizes and processes Tiny Shakespeare dataset
-- 🧰 **Modular Codebase**: Easily extendable and understandable
+-  **Transformer Architecture**: Built using custom encoder/decoder blocks
+-  **Multi-Head Attention**: For learning long-range sequence dependencies
+-  **Positional Encoding**: Preserves sequence order without recurrence
+-  **Training Pipeline**: Tokenizes and processes Tiny Shakespeare dataset
+-  **Modular Codebase**: Easily extendable and understandable
 
 ---
 
-## 📖 Paper Impact
+##  Paper Impact
 
 This project is deeply rooted in the **"Attention Is All You Need"** paper by Vaswani et al.  
 It demonstrates how **self-attention** and **multi-head attention** can be implemented from scratch and used effectively even on **small-scale datasets**, producing **coherent and context-aware outputs**.
 
 ---
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
 ### 1. Clone the Repository
 ```bash
@@ -61,7 +61,7 @@ python training.py
 
 ---
 
-## 🧠 Usage
+##  Usage
 
 - 🏋️ **Training**: Trains on 70% of dataset, logs loss every 100 batches
 - ⚙️ **Customization**: Tweak hyperparameters in `model.py` or `training.py`
@@ -70,7 +70,7 @@ python training.py
 
 ---
 
-## 📐 Technical Details
+##  Technical Details
 
 | Component           | Value                              |
 | ------------------- | ---------------------------------- |
@@ -85,7 +85,7 @@ python training.py
 
 ---
 
-## 📂 Directory Structure
+##  Directory Structure
 
 ```
 gpt_from_scratch/
@@ -109,7 +109,7 @@ gpt_from_scratch/
 
 ---
 
-## 🚀 Future Enhancements
+##  Future Enhancements
 
 - 💾 Add checkpoint saving after each epoch
 - 🧠 Implement text generation (sampling/greedy decoding)
@@ -118,7 +118,7 @@ gpt_from_scratch/
 
 ---
 
-## ❓ Why This Project?
+##  Why This Project?
 
 This project is built for learners, engineers, and researchers who want to:
 - Understand Transformer internals from scratch
@@ -127,7 +127,7 @@ This project is built for learners, engineers, and researchers who want to:
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the [MIT License](LICENSE).
 
