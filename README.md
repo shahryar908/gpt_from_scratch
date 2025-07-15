@@ -75,12 +75,12 @@ python training.py
 | Component           | Value                              |
 | ------------------- | ---------------------------------- |
 | Transformer Layers  | 4                                  |
-| Attention Heads     | 8                                  |
-| Embedding Dimension | 512                                |
-| Feedforward Dim     | 2048                               |
+| Attention Heads     | 4                                  |
+| Embedding Dimension | 64                                 |
+| Feedforward Dim     | 264                                |
 | Tokenizer           | Character-level                    |
-| Dataset             | Tiny Shakespeare (~1MB)           |
-| Loss Function       | Cross-Entropy with Teacher Forcing |
+| Dataset             | Tiny Shakespeare (~1MB)            |
+| Loss Function       | Cross-Entropy                      |
 | Optimizer           | Adam                               |
 
 ---
